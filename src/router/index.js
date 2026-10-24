@@ -1,7 +1,7 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
 
   routes: [
     {
@@ -27,9 +27,7 @@ const router = createRouter({
   ],
 
   scrollBehavior(to, from, savedPosition) {
-    if (savedPosition) {
-      return savedPosition
-    }
+    if (savedPosition) return savedPosition
 
     if (to.hash) {
       return {
